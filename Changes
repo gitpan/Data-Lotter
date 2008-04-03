@@ -1,4 +1,7 @@
 Revision history for Perl extension Data::Lotter
 
-0.00001_00  Thu Apr 3 23:11:35 2008
-        - original version
+0.00001_01  Thu Apr 4
+ - set '=encoding UTF-8' command paragraph at beginning of POD block
+
+0.00001_00  Thu Apr 3
+ - original version

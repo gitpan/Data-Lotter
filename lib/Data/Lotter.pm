@@ -3,7 +3,7 @@ package Data::Lotter;
 use base qw( Class::Accessor::Fast );
 use strict;
 use 5.8.1;
-our $VERSION = '0.00001_00';
+our $VERSION = '0.00001_01';
 use Data::Dumper;
 use constant DEBUG => $ENV{DATA_LOTTER_DEBUG};
 
@@ -75,6 +75,9 @@ sub left_item_waits {
 1;
 
 __END__
+
+
+=encoding UTF-8
 
 =head1 NAME
 
