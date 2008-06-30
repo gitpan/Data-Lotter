@@ -7,7 +7,7 @@ use Data::Dumper;
 use constant DEBUG => $ENV{DATA_LOTTER_DEBUG};
 use 5.8.1;
 
-our $VERSION = '0.00001';
+our $VERSION = '0.00002';
 
 __PACKAGE__->mk_accessors qw( lists available );
 

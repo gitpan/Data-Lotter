@@ -1,6 +1,9 @@
 Revision history for Perl extension Data::Lotter
 
 
+0.00002     2008/6/30
+   - update version number only
+
 0.00001     2008/6/30
    - OFFICIAL RELEASE 
    - rewrite POD blicks in English
