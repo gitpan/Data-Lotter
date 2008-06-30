@@ -11,7 +11,7 @@ my %candidates = (
     white => 34,
 );
 
-my $num = 100000;
+my $num = 10000;
 my $count;
 for ( 1 .. $num ) {
     my $lotter = Data::Lotter->new(%candidates);
