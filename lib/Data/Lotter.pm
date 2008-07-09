@@ -7,7 +7,7 @@ use Data::Dumper;
 use constant DEBUG => $ENV{DATA_LOTTER_DEBUG};
 use 5.8.1;
 
-our $VERSION = '0.00002';
+our $VERSION = '0.00003';
 
 __PACKAGE__->mk_accessors qw( lists available );
 
@@ -22,6 +22,8 @@ sub new {
     my $class = shift;
     my %lists = @_;
 
+    _scale_up(\%lists);
+
     my $cumulative = 0;
     foreach my $weight ( values %lists ) {
         $weight = int($weight);
@@ -29,6 +31,28 @@ sub new {
     }
 
     return $class->SUPER::new( { available => $cumulative, lists => \%lists } );
+}
+
+sub _scale_up{
+    my $lists_ref = shift;
+
+    my ($i,$j);
+    while ( my ( $key, $value ) = each %$lists_ref ) {
+        $value =~ /\.(\d+)/;
+        $1 and $i = length $1;
+        if( !$j or $i > $j ){
+            $j = $i;
+        }
+    }
+    if($j){
+        $j = 6 if $j > 6;
+        my $scale = 10 ** $j;
+        if($scale > 1){
+            for(keys(%$lists_ref)){
+                $lists_ref->{$_} *= $scale;
+            }
+        }
+    }
 }
 
 sub pickup {
@@ -118,7 +142,7 @@ Data::Lotter - Data lottery module by its own weight
 =head1 DESCRIPTION
 
 Data::Lotter is data lottery module.
-It will be implement both pattern such as the lottery and the election.
+It provides both pattern such as the lottery and the election.
 
 
 =head1 METHODS
