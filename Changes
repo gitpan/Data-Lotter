@@ -1,5 +1,7 @@
 Revision history for Perl extension Data::Lotter
 
+0.00004     2014/02/04
+   - bug fix
 
 0.00003     2008/7/09
    - added _scale_up() method and test code
